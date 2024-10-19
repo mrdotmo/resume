@@ -1,0 +1,259 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Sang Wook Ahn's CV},
+    pdfauthor={Sang Wook Ahn},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Sang Wook Ahn - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Sang Wook Ahn}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Kingston, New York}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:sangwookahn@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}sangwookahn@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+1 (424) 256-9523}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+1 (424) 256-9523}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/mrdotmo}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}mrdotmo}}%
+        \kern 0.25 cm%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+    \section{}
+    \begin{onecolentry}
+        I am an enthusiastic Software Engineer who brings technical expertise and a strong sense of project ownership. I enjoy working in small, dedicated teams that move quickly, find elegant solutions for challenging problems and ship smoothly.
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+    
+    \section{Experience}
+        \begin{twocolentry}{
+        \textit{San Franciso, CA}    
+        \textit{June 2022 – Oct 2024}}
+            \textbf{Software Engineer}
+            \textit{Magical Tome, Inc.}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            Tome is a sales intelligence platform that leverages LLMs to revolutionize how sales and marketing teams research and present opportunities to potential clients.
+            \begin{highlights}
+                \item Designed and implemented our credit system, where users could earn credits by referrals and use the credits for our LLM based features.  This feature helps Tome become the fastest growing productivity tool in 2023.
+                \item Blue/Green deployments of our application and databases, providing automatic rollbacks of bad deployments, and zero downtime upgrades and maintenance of the database.
+                \item LLM observability, allowing us to root cause issues with backend APIs and prompt sequences.
+                \item Maintain and improve the CI/CD system.
+                \item Designed and implemented a job service to reduce backend load and enable LangChain Runnables to operate in an environment separate from our backend.
+                \item Designed and implemented an ELT data pipeline for model fine tuning.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+        \textit{Venice, CA}    
+            
+        \textit{2006 – 2019}}
+            \textbf{Software Engineer}
+            \textit{Google}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Mobile Vision API}
+        \end{onecolentry}
+
+        \begin{onecolentry}
+            Mobile Vision API provides ML models and APIs for Text Recognition, Object Tracking, Face Features and Barcode Scanning on iOS and Android devices.  Our ML models and APIs were used in billions of devices globally.
+            \begin{highlights}
+                \item Designed and implemented a new deployment strategy, using Android Dynamic Apps. This work improved security and decoupled our release cycle from the release cycle of the Android Core Library.  The model download success rate improved from 70% to over 90%. 
+                \item Responsible for deploying new APIs and models on Android, as well as maintaining older APIs for backwards compatibility.
+            \end{highlights}
+        \end{onecolentry}
+        
+        \begin{onecolentry}
+            \textbf{Niantic Labs}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            Niantic Labs was an autonomous unit within Google, Inc.  I worked on internal tools and backend services for Ingress and Pokémon Go, augmented reality massively multiplayer mobile games.
+            \begin{highlights}
+                \item Rewrote the enqueueing of tracking events (e.g. game actions such as fire weapons) in task queues.  Batching of tracking events reduced the number of tasks in queue by half, and subsequently reduced the number of necessary tracking backends by half.
+                \item Designed and implemented intelligent location tracking of player location.  Using in-game signals to adjust the location ping rates in real-time reduced server hits for location tracking by more than 50 percent.
+                \item Key contributor to location services, and in-game inter-player communication panel, including UI and background processing of messages.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Technologies}
+        \begin{onecolentry}
+            \textbf{Languages:} TypeScript, Swift, Python, C++, C, Java, Objective-C, Golang, JavaScript
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Technologies:} NodeJS, ReactJS, iOS Development, AWS, GCP
+        \end{onecolentry}
+
+    \section{Education}
+        \begin{twocolentry}{
+        \textit{Evanston, Illinois}}
+            \textbf{Northwestern University}
+
+            \textit{BS in Mechanical Engineering}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            % \begin{highlights}
+                \textbf{Coursework:} Linear Systems and Control Theory
+            % \end{highlights}
+        \end{onecolentry}
+    
+    
+
+\end{document}
