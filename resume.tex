@@ -187,18 +187,18 @@
 	\begin{highlights}
 		\item \textbf{AI/ML Ops:} Designed and built an automated LLM evaluation pipeline that extracted
 		structured information from conversation transcripts and scored how accurately AI-generated
-		documents captured the source content. This gave product teams and domain experts a repeatable
-		benchmark across eight predefined criteria, replacing ad hoc manual review.
+		documents captured the source content. This gave product teams and domain experts repeatable
+		benchmarks across quality criteria. This replaced inconsistent manual reviews with a reliable,
+		repeatable testing process.
 		\item \textbf{Distributed Systems:} Built a background job service to execute evaluation
 		pipelines in isolated, concurrent workers against a PostgreSQL-backed queue, with
 		a heartbeat-based ownership model and serializable transaction isolation to
 		prevent duplicate execution across instances. This decoupled long-running LLM
 		inference from the primary backend, supported up to 72 parallel jobs, and
 		automatically reclaimed abandoned work upon failure.
-		\item \textbf{LLM Observability:} Developed an observability layer which integrated with a
-		dashboard; tracking across multiple model providers. This gave stakeholders direct visibility
-		into model behavior, output quality trends, and inference spend across multiple models and model
-		parameters.
+		\item \textbf{LLM Observability:} Built an observability layer which integrated with a
+		dashboard; tracking across various models, model providers and model parameter settings. This
+		gave direct visibility into model behavior, output quality trends, and inference spend.
 	\end{highlights}
 \end{onecolentry}
 
