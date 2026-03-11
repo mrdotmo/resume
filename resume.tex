@@ -181,6 +181,19 @@
 
         \begin{onecolentry}
         Built the backend infrastructure and data pipelines for a human-in-the-loop (HITL) evaluation platform. This system enabled product managers and domain experts to monitor LLM inference performance from a product perspective—facilitating manual review and benchmarking of model behavior beyond conventional ML metrics.
+        \begin{highlights}
+        \item \textbf{AI/ML Ops:} Designed and built an automated LLM evaluation pipeline that extracted structured information from conversation transcripts and scored how accurately AI-generated documents captured the source content. This gave product teams and domain experts a repeatable benchmark across eight predefined criteria, replacing ad hoc manual review.
+        \item \textbf{Distributed Systems:} Built a background job service to execute evaluation
+          pipelines in isolated, concurrent workers against a PostgreSQL-backed queue, with
+          a heartbeat-based ownership model and serializable transaction isolation to
+          prevent duplicate execution across instances. This decoupled long-running LLM
+          inference from the primary backend, supported up to 72 parallel jobs, and
+          automatically reclaimed abandoned work upon failure.
+        \item \textbf{LLM Observability:} Developed an observability layer with a
+          visualization dashboard with per-evaluation reports, and integrated per-call LLM cost
+           tracking across multiple model providers. This gave stakeholders direct
+          visibility into model behavior, output quality trends, and inference spend.
+        \end{highlights}
         \end{onecolentry}
 
         \vspace{0.2 cm}
