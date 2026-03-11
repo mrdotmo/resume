@@ -132,153 +132,159 @@
 
 
 \begin{document}
-    \newcommand{\AND}{\unskip
-        \cleaders\copy\ANDbox\hskip\wd\ANDbox
-        \ignorespaces
-    }
-    \newsavebox\ANDbox
-    \sbox\ANDbox{}
+\newcommand{\AND}{\unskip
+	\cleaders\copy\ANDbox\hskip\wd\ANDbox
+	\ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
 
-    \begin{header}
-        \textbf{\fontsize{24 pt}{24 pt}\selectfont Sang Wook Ahn}
+\begin{header}
+	\textbf{\fontsize{24 pt}{24 pt}\selectfont Sang Wook Ahn}
 
-        \vspace{0.3 cm}
+	\vspace{0.3 cm}
 
-        \normalsize
-        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Kingston, New York}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{mailto:sangwookahn@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}sangwookahn@gmail.com}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{tel:+1 (424) 256-9523}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+1 (424) 256-9523}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/mrdotmo}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}mrdotmo}}%
-        \kern 0.25 cm%
-    \end{header}
+	\normalsize
+	\mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Kingston, New York}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{mailto:sangwookahn@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}sangwookahn@gmail.com}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{tel:+1 (424) 256-9523}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+1 (424) 256-9523}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{https://linkedin.com/in/mrdotmo}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}mrdotmo}}%
+	\kern 0.25 cm%
+\end{header}
 
-    \vspace{0.3 cm - 0.3 cm}
+\vspace{0.3 cm - 0.3 cm}
 
-    \section{}
-    \begin{onecolentry}
-        Systems-focused Software Engineer with decades of experience delivering large-scale infrastructure and high-growth AI platforms. Expert in designing resilient distributed systems that bridge the gap between ML research and production-grade reliability. Proven track record of optimizing infrastructure overhead and engineering seamless deployment strategies for both cloud-native environments and mobile ecosystems.
-    \end{onecolentry}
+\section{}
+\begin{onecolentry}
+	Systems-focused Software Engineer with decades of experience delivering large-scale infrastructure and high-growth AI platforms. Expert in designing resilient distributed systems that bridge the gap between ML research and production-grade reliability. Proven track record of optimizing infrastructure overhead and engineering seamless deployment strategies for both cloud-native environments and mobile ecosystems.
+\end{onecolentry}
 
-    \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-    \section{Experience}
+\section{Experience}
 
-        \begin{twocolentry}{
-        \textit{2025}}
-        \textit{Lumiflow AI}
-        \end{twocolentry}
+\begin{twocolentry}{
+		\textit{2025}}
+	\textit{Lumiflow AI}
+\end{twocolentry}
 
-        \vspace{0.10 cm}
+\vspace{0.10 cm}
 
-        \begin{onecolentry}
-        Built the backend infrastructure and data pipelines for a human-in-the-loop (HITL) evaluation platform. This system enabled product managers and domain experts to monitor LLM inference performance from a product perspective—facilitating manual review and benchmarking of model behavior beyond conventional ML metrics.
-        \begin{highlights}
-        \item \textbf{AI/ML Ops:} Designed and built an automated LLM evaluation pipeline that extracted structured information from conversation transcripts and scored how accurately AI-generated documents captured the source content. This gave product teams and domain experts a repeatable benchmark across eight predefined criteria, replacing ad hoc manual review.
-        \item \textbf{Distributed Systems:} Built a background job service to execute evaluation
-          pipelines in isolated, concurrent workers against a PostgreSQL-backed queue, with
-          a heartbeat-based ownership model and serializable transaction isolation to
-          prevent duplicate execution across instances. This decoupled long-running LLM
-          inference from the primary backend, supported up to 72 parallel jobs, and
-          automatically reclaimed abandoned work upon failure.
-        \item \textbf{LLM Observability:} Developed an observability layer with a
-          visualization dashboard with per-evaluation reports, and integrated per-call LLM cost
-           tracking across multiple model providers. This gave stakeholders direct
-          visibility into model behavior, output quality trends, and inference spend.
-        \end{highlights}
-        \end{onecolentry}
+\begin{onecolentry}
+	Built the backend infrastructure and data pipelines for a human-in-the-loop (HITL) evaluation
+	platform. This system enabled product managers and domain experts to monitor LLM inference
+	performance from a product perspective — facilitating manual review and benchmarking of model
+	behavior beyond conventional ML metrics.
+	\begin{highlights}
+		\item \textbf{AI/ML Ops:} Designed and built an automated LLM evaluation pipeline that extracted
+		structured information from conversation transcripts and scored how accurately AI-generated
+		documents captured the source content. This gave product teams and domain experts a repeatable
+		benchmark across eight predefined criteria, replacing ad hoc manual review.
+		\item \textbf{Distributed Systems:} Built a background job service to execute evaluation
+		pipelines in isolated, concurrent workers against a PostgreSQL-backed queue, with
+		a heartbeat-based ownership model and serializable transaction isolation to
+		prevent duplicate execution across instances. This decoupled long-running LLM
+		inference from the primary backend, supported up to 72 parallel jobs, and
+		automatically reclaimed abandoned work upon failure.
+		\item \textbf{LLM Observability:} Developed an observability layer which integrated with a
+		dashboard; tracking across multiple model providers. This gave stakeholders direct visibility
+		into model behavior, output quality trends, and inference spend across multiple models and model
+		parameters.
+	\end{highlights}
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-        \begin{twocolentry}{
-        \textit{2022 – 2024}}
-            \textit{Magical Tome, Inc.}
-        \end{twocolentry}
+\begin{twocolentry}{
+		\textit{2022 – 2024}}
+	\textit{Magical Tome, Inc.}
+\end{twocolentry}
 
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            Tome was a generative AI presentation tool that transitioned into a sales intelligence platform. I designed and scaled the infrastructure that supported its growth into the fastest-growing productivity tool of 2023.
-            \begin{highlights}
-                \item \textbf{AI/ML Ops:} Designed and launched a dedicated job service to run LangChain Runnables in isolated environments. This ensured high-performance execution of LLM chains while protecting the primary backend from resource contention.
-                \item \textbf{LLM Observability:} Integrated LangSmith to monitor and debug complex prompt sequences. This lowered the time-to-resolution for LLM-related failures from several days to just a few hours.
-                \item \textbf{DevOps and CI/CD:} Modernized the deployment pipeline by implementing Blue/Green strategies for both applications and databases. This upgrade enabled automated rollbacks and guaranteed zero-downtime during maintenance cycles.
-                \item \textbf{Monetization Infrastructure:} Built the credit and referral system to manage user rewards and track LLM feature usage.
-                \item \textbf{Data Engineering:} Developed the ELT pipelines required for model fine-tuning and built the production RAG (Retrieval-Augmented Generation) workflows. Utilized pgvector for high-performance embedding storage and retrieval to power LLM-driven features.
-            \end{highlights}
-        \end{onecolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	Tome was a generative AI presentation tool that transitioned into a sales intelligence platform. I designed and scaled the infrastructure that supported its growth into the fastest-growing productivity tool of 2023.
+	\begin{highlights}
+		\item \textbf{AI/ML Ops:} Designed and launched a dedicated job service to run LangChain Runnables in isolated environments. This ensured high-performance execution of LLM chains while protecting the primary backend from resource contention.
+		\item \textbf{LLM Observability:} Integrated LangSmith to monitor and debug complex prompt sequences. This lowered the time-to-resolution for LLM-related failures from several days to just a few hours.
+		\item \textbf{DevOps and CI/CD:} Modernized the deployment pipeline by implementing Blue/Green strategies for both applications and databases. This upgrade enabled automated rollbacks and guaranteed zero-downtime during maintenance cycles.
+		\item \textbf{Monetization Infrastructure:} Built the credit and referral system to manage user rewards and track LLM feature usage.
+		\item \textbf{Data Engineering:} Developed the ELT pipelines required for model fine-tuning and built the production RAG (Retrieval-Augmented Generation) workflows. Utilized pgvector for high-performance embedding storage and retrieval to power LLM-driven features.
+	\end{highlights}
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-        \begin{twocolentry}{
-        \textit{2006 – 2019}}
-            \textit{Google}
-        \end{twocolentry}
+\begin{twocolentry}{
+		\textit{2006 – 2019}}
+	\textit{Google}
+\end{twocolentry}
 
-        \vspace{0.10 cm}
+\vspace{0.10 cm}
 
-        \begin{onecolentry}
-            Mobile Vision API provides ML models and APIs for Text Recognition, Object Tracking, Face Features and Barcode Scanning on iOS and Android devices.  Our ML models and APIs were used in billions of devices globally.
-            \begin{highlights}
-                \item \textbf{ML Infrastructure:} Designed and implemented the deployment strategy using Android Dynamic Apps to decouple release cycles from the Android Core Library. This improved model download success rates from 70\% to over 90\%.
-                \item \textbf{API Support and Lifecycle:} Managed the deployment of new APIs and models for Text Recognition, Object Tracking, and Face Features across billions of devices globally. Responsible for maintaining backwards compatibility and supporting the full lifecycle of these services.
-            \end{highlights}
-        \end{onecolentry}
+\begin{onecolentry}
+	Mobile Vision API provides ML models and APIs for Text Recognition, Object Tracking, Face Features and Barcode Scanning on iOS and Android devices.  Our ML models and APIs were used in billions of devices globally.
+	\begin{highlights}
+		\item \textbf{ML Infrastructure:} Designed and implemented the deployment strategy using Android Dynamic Apps to decouple release cycles from the Android Core Library. This improved model download success rates from 70\% to over 90\%.
+		\item \textbf{API Support and Lifecycle:} Managed the deployment of new APIs and models for Text Recognition, Object Tracking, and Face Features across billions of devices globally. Responsible for maintaining backwards compatibility and supporting the full lifecycle of these services.
+	\end{highlights}
+\end{onecolentry}
 
-        \vspace{0.10 cm}
+\vspace{0.10 cm}
 
-        \begin{onecolentry}
-            Niantic Labs was an autonomous unit within Google, Inc.  I worked on internal tools and backend services for Ingress and Pokémon Go, augmented reality massively multiplayer mobile games.
-            \begin{highlights}
-                \item \textbf{Distributed Systems:} Rewrote the tracking event system to use batching in task queues. This halved the number of tasks in the queue and reduced the required number of tracking backends by 50\%.
-                \item \textbf{Real-time Optimization:} Designed and built intelligent location tracking that adjusted ping rates based on real-time in-game signals. This implementation reduced server hits for location tracking by more than 50\%.
-                \item \textbf{Product Engineering:} Designed and built the in-game inter-player communication panel. This included concurrent background message processing and location-specific features.
-            \end{highlights}
-        \end{onecolentry}
+\begin{onecolentry}
+	Niantic Labs was an autonomous unit within Google, Inc.  I worked on internal tools and backend services for Ingress and Pokémon Go, augmented reality massively multiplayer mobile games.
+	\begin{highlights}
+		\item \textbf{Distributed Systems:} Rewrote the tracking event system to use batching in task queues. This halved the number of tasks in the queue and reduced the required number of tracking backends by 50\%.
+		\item \textbf{Real-time Optimization:} Designed and built intelligent location tracking that adjusted ping rates based on real-time in-game signals. This implementation reduced server hits for location tracking by more than 50\%.
+		\item \textbf{Product Engineering:} Designed and built the in-game inter-player communication panel. This included concurrent background message processing and location-specific features.
+	\end{highlights}
+\end{onecolentry}
 
-    \section{Technologies}
-        \begin{onecolentry}
-            \textbf{AI/ML Ops:} LLM Observability, LangChain, Model Fine-tuning Pipelines (ELT), pgvector, RAG (Retrieval-Augmented Generation), Distributed Job Orchestration
-        \end{onecolentry}
+\section{Technologies}
+\begin{onecolentry}
+	\textbf{AI/ML Ops:} LLM Observability, LangChain, Model Fine-tuning Pipelines (ELT), pgvector, RAG (Retrieval-Augmented Generation), Distributed Job Orchestration
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-        \begin{onecolentry}
-            \textbf{Systems:} Distributed Systems, Signal Processing, API Design, Serverless Architectures
-        \end{onecolentry}
+\begin{onecolentry}
+	\textbf{Systems:} Distributed Systems, Signal Processing, API Design, Serverless Architectures
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-        \begin{onecolentry}
-            \textbf{Infrastructure and DevOps:} AWS, GCP, Terraform, CI/CD, Database Migration/Scaling, Containerization
-        \end{onecolentry}
+\begin{onecolentry}
+	\textbf{Infrastructure and DevOps:} AWS, GCP, Terraform, CI/CD, Database Migration/Scaling, Containerization
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-        \begin{onecolentry}
-            \textbf{Languages:} Python, Golang, Rust, TypeScript, Swift,  C/C++, Java, Objective-C
-        \end{onecolentry}
+\begin{onecolentry}
+	\textbf{Languages:} Python, Golang, Rust, TypeScript, Swift,  C/C++, Java, Objective-C
+\end{onecolentry}
 
-        \vspace{0.2 cm}
+\vspace{0.2 cm}
 
-    \section{Education}
-        \begin{twocolentry}{
-        \textit{Evanston, Illinois}}
-            \textbf{Northwestern University}
-            \textit{BS in Mechanical Engineering}
-        \end{twocolentry}
+\section{Education}
+\begin{twocolentry}{
+		\textit{Evanston, Illinois}}
+	\textbf{Northwestern University}
+	\textit{BS in Mechanical Engineering}
+\end{twocolentry}
 
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            % \begin{highlights}
-                \textbf{Coursework:} Linear Systems and Control Theory
-            % \end{highlights}
-        \end{onecolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	% \begin{highlights}
+	\textbf{Coursework:} Linear Systems and Control Theory
+	% \end{highlights}
+\end{onecolentry}
 \end{document}
