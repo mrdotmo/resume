@@ -180,10 +180,7 @@
 \vspace{0.10 cm}
 
 \begin{onecolentry}
-	Built the backend infrastructure and data pipelines for a human-in-the-loop (HITL) evaluation
-	platform. This system enabled product managers and domain experts to monitor LLM inference
-	performance from a product perspective — facilitating manual review and benchmarking of model
-	behavior beyond conventional ML metrics.
+Built the backend infrastructure and data pipelines for a human-in-the-loop (HITL) evaluation platform. This system enabled product managers and domain experts to monitor LLM inference performance from a product perspective, facilitating manual review and benchmarking of model behavior beyond conventional ML metrics.
 	\begin{highlights}
 		\item \textbf{AI/ML Ops:} Designed and built an automated LLM evaluation pipeline that extracted structured information from conversation transcripts and scored how accurately AI-generated documents captured the source content. The pipeline enabled product teams and domain experts to establish repeatable benchmarks across quality criteria, replacing inconsistent manual reviews with a reliable, repeatable testing process.
 		\item \textbf{Distributed Systems:} Built a background job service to execute evaluation pipelines in isolated, concurrent workers against a PostgreSQL-backed queue, with a heartbeat-based ownership model and serializable transaction isolation to prevent duplicate execution across instances. The system decoupled long-running LLM inference from the primary backend, supported up to 72 parallel jobs, and automatically reclaimed abandoned work upon failure.
@@ -202,8 +199,8 @@
 \begin{onecolentry}
 	Tome was a generative AI presentation tool that transitioned into a sales intelligence platform. I designed and scaled the infrastructure that supported its growth into the fastest-growing productivity tool of 2023.
 	\begin{highlights}
-		\item \textbf{AI/ML Ops:} Designed and launched a dedicated job service to run LangChain Runnables in isolated environments. This ensured high-performance execution of LLM chains while protecting the primary backend from resource contention.
-		\item \textbf{LLM Observability:} Integrated LangSmith to monitor and debug complex prompt sequences. This lowered the time-to-resolution for LLM-related failures from several days to just a few hours.
+		\item \textbf{AI/ML Ops:} Designed and launched a dedicated job service to run LangChain Runnables in isolated environments. The isolated environments ensured high-performance execution of LLM chains while protecting the primary backend from resource contention.
+		\item \textbf{LLM Observability:} Integrated LangSmith to monitor and debug complex prompt sequences. The integration lowered the time-to-resolution for LLM-related failures from several days to just a few hours.
 		\item \textbf{DevOps and CI/CD:} Modernized the deployment pipeline by implementing Blue/Green strategies for both applications and databases. This upgrade enabled automated rollbacks and guaranteed zero-downtime during maintenance cycles.
 		\item \textbf{Monetization Infrastructure:} Built the credit and referral system to manage user rewards and track LLM feature usage.
 		\item \textbf{Data Engineering:} Developed the ELT pipelines required for model fine-tuning and built the production RAG (Retrieval-Augmented Generation) workflows. Utilized pgvector for high-performance embedding storage and retrieval to power LLM-driven features.
@@ -220,9 +217,9 @@
 \vspace{0.10 cm}
 
 \begin{onecolentry}
-	Mobile Vision API provides ML models and APIs for Text Recognition, Object Tracking, Face Features and Barcode Scanning on iOS and Android devices.  Our ML models and APIs were used in billions of devices globally.
+	Mobile Vision API provides ML models and APIs for Text Recognition, Object Tracking, Face Features and Barcode Scanning on iOS and Android devices. Our ML models and APIs were used in billions of devices globally.
 	\begin{highlights}
-		\item \textbf{ML Infrastructure:} Designed and implemented the deployment strategy using Android Dynamic Apps to decouple release cycles from the Android Core Library. This improved model download success rates from 70\% to over 90\%.
+		\item \textbf{ML Infrastructure:} Designed and implemented the deployment strategy using Android Dynamic Apps to decouple release cycles from the Android Core Library. The strategy improved model download success rates from 70\% to over 90\%.
 		\item \textbf{API Support and Lifecycle:} Managed the deployment of new APIs and models for Text Recognition, Object Tracking, and Face Features across billions of devices globally. Responsible for maintaining backwards compatibility and supporting the full lifecycle of these services.
 	\end{highlights}
 \end{onecolentry}
@@ -230,9 +227,9 @@
 \vspace{0.10 cm}
 
 \begin{onecolentry}
-	Niantic Labs was an autonomous unit within Google, Inc.  I worked on internal tools and backend services for Ingress and Pokémon Go, augmented reality, massively multiplayer mobile games.
+	Niantic Labs was an autonomous unit within Google, Inc. I worked on internal tools and backend services for Ingress and Pokémon Go, augmented reality, massively multiplayer mobile games.
 	\begin{highlights}
-		\item \textbf{Distributed Systems:} Rewrote the tracking event system to use batching in task queues. This halved the number of tasks in the queue and reduced the required number of tracking backends by 50\%.
+		\item \textbf{Distributed Systems:} Rewrote the tracking event system to use batching in task queues. The rewrite halved the number of tasks in the queue and reduced the required number of tracking backends by 50\%.
 		\item \textbf{Real-time Optimization:} Designed and built intelligent location tracking that adjusted ping rates based on real-time in-game signals. This implementation reduced server hits for location tracking by more than 50\%.
 		\item \textbf{Product Engineering:} Designed and built the in-game inter-player communication panel. This included concurrent background message processing and location-specific features.
 	\end{highlights}
